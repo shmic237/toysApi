@@ -58,13 +58,13 @@
                     </tr>
                     <tr>
                         <td>GET</td>
-                        <td><a href="/api/v1/users/info/:id">/api/v1/users/info/{id}</a></td>
+                        <td><a href="/api/v1/users/info/656db39c98c3e5ab7ca68951">/api/v1/users/info/{id}</a></td>
                         <td class="text-center">none</td>
                         <td>Get your own info.</td>
                     </tr>
                     <tr>
                         <td>POST</td>
-                        <td><a href="">/api/v1/users/register</a></td>
+                        <td>/api/v1/users/register</td>
                         <td>
                             <p>
                                 { <br>
@@ -79,7 +79,7 @@
                     </tr>
                     <tr>
                         <td>POST</td>
-                        <td><a href="">/api/v1/users/login</a></td>
+                        <td>/api/v1/users/login</td>
                         <td>
                             <p>
                                 { <br>
@@ -92,14 +92,14 @@
                     </tr>
                     <tr>
                         <td>DELETE</td>
-                        <td><a href="">/users/{idDelete}</a></td>
+                        <td>/api/v1/users/{idDelete}</td>
                         <td></td>
                         <td>Delete a user from the data base. <br> <strong> User can delete only himself.</strong>
                         </td>
                     </tr>
                     <tr>
                         <td>PATCH</td>
-                        <td><a href="">/users/{idEdit}</a></td>
+                        <td>/users/{idEdit}</td>
                         <td></td>
                         <td>Patch a user from the data base. <br><strong> User can patch only himself.</strong>
                         </td>
@@ -128,31 +128,31 @@
                     </tr>
                     <tr>
                         <td>GET</td>
-                        <td><a href="/api/v1/toys/{id}">/api/v1/toys/{id}</a></td>
+                        <td><a href="/api/v1/toys/656db39c98c3e5ab7ca68951">/api/v1/toys/{id}</a></td>
                         <td class="text-center">none</td>
                         <td>Get your own toys.</td>
                     </tr>
                     <tr>
                         <td>GET</td>
-                        <td><a href="/api/v1/toys/search?s={name/info}">/api/v1/toys/search?s={name/info}</a></td>
+                        <td><a href="/api/v1/toys/search?s=Taki">/api/v1/toys/search?s={name/info}</a></td>
                         <td class="text-center">none</td>
                         <td>search for a toy by searching follwing name or info after the "s=", <br> it will present 10 results per page.</td>
                     </tr>
                     <tr>
                         <td>GET</td>
-                        <td><a href="/api/v1/toys/category/{catname}">/api/v1/toys/category/{catname}</a></td>
+                        <td><a href="/api/v1/toys/category/Board game">/api/v1/toys/category/{catname}</a></td>
                         <td class="text-center">none</td>
                         <td>Get a list of all the toys category, it will present 10 results per page.</td>
                     </tr>
                     <tr>
                         <td>GET</td>
-                        <td><a href="/api/v1/toys/single/{id}">/api/v1/toys/single/{id}</a></td>
+                        <td><a href="/api/v1/toys/single/656dc6c3edf98a58c1b14d8f">/api/v1/toys/single/{id}</a></td>
                         <td class="text-center">none</td>
                         <td>Get a toy.</td>
                     </tr>
                     <tr>
                         <td>POST</td>
-                        <td><a href="">/api/v1/toys</a></td>
+                        <td>/api/v1/toys</td>
                         <td>
                             <p>
                                 { <br>
@@ -168,14 +168,14 @@
                     </tr>
                     <tr>
                         <td>DELETE</td>
-                        <td><a href="">/toys/{idDelete}</a></td>
+                        <td>/api/v1/toys/{idDelete}</td>
                         <td></td>
                         <td>Delete a toy from the data base. <br> <strong> User can only patch his own toys - need a token for this query.</strong>
                         </td>
                     </tr>
                     <tr>
                         <td>PATCH</td>
-                        <td><a href="">/toys/{idEdit}</a></td>
+                        <td>/api/v1/toys/{idEdit}</td>
                         <td></td>
                         <td>Patch a toy from the data base. <br><strong> User can only patch his own toys - need a token for this query.</strong>
                         </td>
