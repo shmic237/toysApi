@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital@1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                <a class="navbar-brand fs-2 p-2" href="#">Toys Api</a>
+                <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link fs-4 p-2" aria-current="page" href="#">Users</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fs-4" href="#">Toys</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container-fluid">
+        <div class="container">
+            <h2 class="p-3">Users-Routes</h2>
+            <table class="table table-bordered table-striped ">
+                <thead class="table-primary">
+                    <tr>
+                        <th class="text-center" scope="col">#Method</th>
+                        <th class="text-center" scope="col">URL</th>
+                        <th class="text-center" scope="col">Body</th>
+                        <th class="text-center" scope="col">Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>GET</td>
+                        <td><a href="/api/v1/users">/api/v1/users</a></td>
+                        <td class="text-center">none</td>
+                        <td>Get all users.</td>
+                    </tr>
+                    <tr>
+                        <td>GET</td>
+                        <td><a href="/api/v1/users/info/:id">/api/v1/users/info/{id}</a></td>
+                        <td class="text-center">none</td>
+                        <td>Get your own info.</td>
+                    </tr>
+                    <tr>
+                        <td>POST</td>
+                        <td><a href="">/api/v1/users/register</a></td>
+                        <td>
+                            <p>
+                                { <br>
+                                "firstName": "Michal",<br>
+                                "lastName": "Shlezinger",<br>
+                                "email": "michal@gmail.com",<br>
+                                "password": "michal1234"<br>
+                                }
+                            </p>
+                        </td>
+                        <td>Add a new user to the data base.</td>
+                    </tr>
+                    <tr>
+                        <td>POST</td>
+                        <td><a href="">/api/v1/users/login</a></td>
+                        <td>
+                            <p>
+                                { <br>
+                                "email": "michal@gmail.com",<br>
+                                "password": "michal1234"<br>
+                                }
+                            </p>
+                        </td>
+                        <td>User login, if the email and password are correct the server will respond error.</td>
+                    </tr>
+                    <tr>
+                        <td>DELETE</td>
+                        <td><a href="">/users/{idDelete}</a></td>
+                        <td></td>
+                        <td>Delete a user from the data base. <br> <strong> User can delete only himself.</strong>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>PATCH</td>
+                        <td><a href="">/users/{idEdit}</a></td>
+                        <td></td>
+                        <td>Patch a user from the data base. <br><strong> User can patch only himself.</strong>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="container">
+            <h2 class="p-3">Toys-Routes</h2>
+            <table class="table table-bordered table-striped ">
+                <thead class="table-primary">
+                    <tr>
+                        <th class="text-center" scope="col">#Method</th>
+                        <th class="text-center" scope="col">URL</th>
+                        <th class="text-center" scope="col">Body</th>
+                        <th class="text-center" scope="col">Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>GET</td>
+                        <td><a href="/api/v1/toys">/api/v1/toys</a></td>
+                        <td class="text-center">none</td>
+                        <td>Get a list of all the toys, will present 10 results per page.</td>
+                    </tr>
+                    <tr>
+                        <td>GET</td>
+                        <td><a href="/api/v1/toys/{id}">/api/v1/toys/{id}</a></td>
+                        <td class="text-center">none</td>
+                        <td>Get your own toys.</td>
+                    </tr>
+                    <tr>
+                        <td>GET</td>
+                        <td><a href="/api/v1/toys/search?s={name/info}">/api/v1/toys/search?s={name/info}</a></td>
+                        <td class="text-center">none</td>
+                        <td>search for a toy by searching follwing name or info after the "s=", <br> it will present 10 results per page.</td>
+                    </tr>
+                    <tr>
+                        <td>GET</td>
+                        <td><a href="/api/v1/toys/category/{catname}">/api/v1/toys/category/{catname}</a></td>
+                        <td class="text-center">none</td>
+                        <td>Get a list of all the toys category, it will present 10 results per page.</td>
+                    </tr>
+                    <tr>
+                        <td>GET</td>
+                        <td><a href="/api/v1/toys/single/{id}">/api/v1/toys/single/{id}</a></td>
+                        <td class="text-center">none</td>
+                        <td>Get a toy.</td>
+                    </tr>
+                    <tr>
+                        <td>POST</td>
+                        <td><a href="">/api/v1/toys</a></td>
+                        <td>
+                            <p>
+                                { <br>
+                                "name": "toy",<br>
+                                "info": "new toy",<br>
+                                "category": "category toy",<br>
+                                "img_url": "toy.jpg",<br>
+                                "price": 59<br>
+                                }
+                            </p>
+                        </td>
+                        <td>Add a new toy to the data base. <br> <strong>You need a token for this query </strong></td>
+                    </tr>
+                    <tr>
+                        <td>DELETE</td>
+                        <td><a href="">/toys/{idDelete}</a></td>
+                        <td></td>
+                        <td>Delete a toy from the data base. <br> <strong> User can only patch his own toys - need a token for this query.</strong>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>PATCH</td>
+                        <td><a href="">/toys/{idEdit}</a></td>
+                        <td></td>
+                        <td>Patch a toy from the data base. <br><strong> User can only patch his own toys - need a token for this query.</strong>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <footer class="container-fluid row align-items-center p-2">
+        <h5 class="text-center">© Michal Shlezinger | Full Stack | Developer | 2023</h5>
+      </footer>
+
+</body>
+
+</html>
