@@ -14,6 +14,7 @@ exports.validRegister = (userBody) =>{
         lastName: Joi.string().required(),
         password: Joi.string().min(4).max(20).required(),
         email: Joi.string().email({ tlds: { allow: ['com'] } }).required().error(() => Error('Email is not valid')),
+        roles: Joi.string().valid('user','admin')
         
     })
     return userJoiSchema.validate(userBody)
